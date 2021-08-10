@@ -1,0 +1,11 @@
+.header{
+    // height: 50px;
+    background: $color-gamma;
+    border-bottom: 1px $color-alpha solid;
+    
+    &Img{
+        width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

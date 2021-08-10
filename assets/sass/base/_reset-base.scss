@@ -33,7 +33,7 @@ body {
   font-size: $font-size-base;
   line-height: $line-height-base;
   background-color: $white;
-  color: $color-gamma;
+  color: $black;
 }
 
 /*
@@ -52,7 +52,7 @@ h5,
 .h5-like,
 h6,
 .h6-like {
-  color: $color-gamma;
+  color: $color-alpha;
 }
 
 /*
@@ -186,6 +186,7 @@ textarea {
 
 img {
   border-style: none;
+  object-fit: cover;
 }
 
 /**

@@ -73,8 +73,7 @@ $gaps: (
 // ----------------
 
 // Font families
-$font-family-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-  Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$font-family-base: 'Montserrat', sans-serif;
 $font-family-headings: sans-serif;
 $font-family-monospace: consolas, courier, monospace;
 $line-height-base: 1.5;
@@ -91,6 +90,7 @@ $font-size: (
   "24": 1.5rem,
   "30": 1.875rem,
   "36": 2.25rem,
+  "48": 3rem,
   "base": 1rem,
   "inherit": inherit,
 );
@@ -110,45 +110,38 @@ $weight-bold: 700;
 // ----------------
 
 // Palette de couleur (à ne pas utiliser en variables sauf $white and $black)
-$white: #ffffff;
-$black: #000000;
-
-$color-gray-1: #f7fafc;
-$color-gray-2: #abc3c2;
-$color-gray-3: #454d5d;
-$color-gray-4: #212529;
-
-$color-blue-1: #0275d8;
-$color-blue-2: #04527b;
-$color-blue-3: #033651;
+$color-purple-1:    #8F5BFE;
+$color-purple-2:    #F3E9F1;
+$color-orange-1:    #E78B06;
 
 // Palette non agnostic (à utiliser en variables)
 
-$color-alpha: $color-gray-1; // couleurs fréquentes
-$color-beta: $color-gray-3;
-$color-gamma: $color-gray-4;
+  // couleurs fréquentes
+$white: #ffffff;
+$black: #000000;
 
-$color-delta: $color-blue-1;
-$color-epsilon: $color-blue-2;
+$color-alpha: $color-purple-1; 
+$color-beta: $color-orange-1;
+$color-gamma: $color-purple-2;
 
+  //dégradé
 $color-gradient-alpha: linear-gradient(
-  to left bottom,
-  $color-alpha,
-  $color-beta
+  135deg,
+  #E78B06 0%,
+  #B8718B 33%,
+  #8F5BFE 100%
 );
 
-$color-alternate-1: #5cb85c; // couleurs moins fréquentes
-$color-alternate-1b: #4d9c4d;
-$color-alternate-2: #5bc0de;
-$color-alternate-2b: #4fa8c4;
-$color-alternate-3: #f0ad4e;
-$color-alternate-3b: #d19644;
-$color-alternate-4: #d9534f;
-$color-alternate-4b: #be4945;
+$color-gradient-alpha-transi: linear-gradient(
+  98.92deg,
+  #8F5BFE 0%,
+  #B8718B 29.95%,
+  #E78B06 98.5%
+);
 
 // Links
-$link-decoration: underline;
-$link-decoration-hover: underline;
+$link-decoration: none;
+$link-decoration-hover: none;
 
 // Border radius
 $radius-none: 0;

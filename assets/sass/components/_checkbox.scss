@@ -13,22 +13,20 @@
 
 $checkbox-color: $white;
 $checkbox-background: $color-alpha;
-$checkbox-size: 2rem;
-$checkbox-border-radius: 4px;
 
 /*
  * checkbox styles
  */
 
 .checkbox {
-  border-radius: $checkbox-border-radius;
+  border-radius: $radius-small;
 }
 
 .checkbox {
   -webkit-appearance: none;
   appearance: none;
-  width: $checkbox-size;
-  height: $checkbox-size;
+  width: map-get($map: $font-size, $key: "24");
+  height: map-get($map: $font-size, $key: "24");
   vertical-align: text-bottom;
   outline: 0;
   box-shadow: inset 0 0 0 1px $color-alpha;

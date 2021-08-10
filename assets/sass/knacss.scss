@@ -24,9 +24,19 @@
 @import "utils/grillade";
 
 // COMPOSANTS (à ajouter au besoin)
-// @import "components/button";
+@import "components/button";
 // @import "components/burger";
-// @import "components/checkbox";
+@import "components/checkbox";
 // @import "components/radio";
-// @import "components/select";
+@import "components/select";
 // @import "components/quote";
+
+@import 'vendors/fontawesome/fontawesome.scss';
+@import 'vendors/fontawesome/solid.scss';
+@import 'vendors/fontawesome/regular.scss';
+@import 'vendors/fontawesome/brands.scss';
+
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/home';
+@import 'layout/product'

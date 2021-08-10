@@ -1,0 +1,24 @@
+.footer {
+    background-color: $color-purple-2;
+    font-size: map-get($map: $font-size, $key: "14");
+
+    &Img{
+        width: 50%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.assu{
+    width: calc(100% / 3);
+    
+    &Icon{
+        font-size: map-get($font-size,"30");
+    }
+}
+
+.rs {
+    color: $color-beta;
+    font-size: map-get($font-size,"30");
+}
