@@ -22,60 +22,38 @@
         </div>
     </header>
 
-    <main class="">
-        <article class="list">
-            <img src="/backend/images/teddy_1.jpg" alt="teddy 1">
-            <div class="listProduct flex flex-col">
-                <h1 class="listTitle">Teddy 01</h1>
-                <a href="/pages/product.html">
-                    <button class="btn btn--list">
-                        Je le veux
-                    </button>
-                </a>
-            </div>
-        </article>
-        <article class="list">
-            <img src="/backend/images/teddy_2.jpg" alt="teddy 1">
-            <div class="listProduct flex flex-col">
-                <h1 class="listTitle">Teddy 01</h1>
-                <a href="/pages/product.html">
-                    <button class="btn btn--list">
-                        Je le veux
-                    </button>
-                </a>
-            </div>
-        </article>
-        <article class="list">
-            <img src="/backend/images/teddy_3.jpg" alt="teddy 1">
-            <div class="listProduct flex flex-col">
-                <h1 class="listTitle">Teddy 01</h1>
-                <a href="/pages/product.html">
-                    <button class="btn btn--list">
-                        Je le veux
-                    </button>
-                </a>
-            </div>
-        </article>
-        <article class="list">
-            <img src="/backend/images/teddy_4.jpg" alt="teddy 1">
-            <div class="listProduct flex flex-col">
-                <h1 class="listTitle">Teddy 01</h1>
-                <a href="/pages/product.html">
-                    <button class="btn btn--list">
-                        Je le veux
-                    </button>
-                </a>
-            </div>
-        </article>
-        <article class="list">
-            <img src="/backend/images/teddy_5.jpg" alt="teddy 1">
-            <div class="listProduct flex flex-col">
-                <h1 class="listTitle">Teddy 01</h1>
-                <a href="/pages/product.html">
-                    <button class="btn btn--list">
-                        Je le veux
-                    </button>
-                </a>
+    <main>
+        <article class="product">
+            <img class="productImg" src="/backend/images/teddy_5.jpg" alt="">
+            <div class="mx-10">
+                <div class="flex justify-between align-items-center">
+                    <h2>Teddy Bear 01</h2>
+                    <h2>9999€</h2>
+                </div>
+        
+                <p> 
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius ducimus cum non, officiis magnam fugiat ipsa illo libero aut eligendi, et delectus inventore nostrum illum consectetur praesentium placeat quis nulla !
+                </p>
+    
+                <p class="mt-10">Couleur :</p>
+                <select class="mb-10">
+                    <option value="salade">salade</option>
+                    <option value="tomate">tomate</option>
+                    <option value="oignons">oignons</option>
+                </select>
+    
+                <div class="flex flex-col justify-center text-center">
+                    <form action="#">
+                        <ul class="is-unstyled">
+                          <li>
+                            <input type="checkbox" class="checkbox" id="c1">
+                            <label for="c1">J'accepte les conditions générales de vente</label>
+                          </li>
+                        </ul>
+                      </form>
+                    <button class="btn align-center">Ajouter au panier</button>
+                    <p>Livraison estimée : entre 1 à 3 semaines</p>
+                </div>
             </div>
         </article>
     </main>
