@@ -30,6 +30,7 @@
 // @import "components/radio";
 @import "components/select";
 // @import "components/quote";
+@import "components/form";
 
 @import 'vendors/fontawesome/fontawesome.scss';
 @import 'vendors/fontawesome/solid.scss';
@@ -39,4 +40,6 @@
 @import 'layout/footer';
 @import 'layout/header';
 @import 'layout/home';
-@import 'layout/product'
+@import 'layout/product';
+@import 'layout/item';
+@import 'layout/checkout';
