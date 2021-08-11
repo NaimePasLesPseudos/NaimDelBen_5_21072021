@@ -29,8 +29,7 @@
   border: none;
   box-shadow: none;
   background: $color-gradient-alpha;
-  transition: 0.25s;
-  transition-property: box-shadow, background-color, color, border;
+  transition: all 1s;
 }
 
 .btn,
