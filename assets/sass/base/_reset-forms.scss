@@ -43,7 +43,7 @@ textarea {
  */
 
 button,
-input:not([type="radio"]):not([type="checkbox"]),
+input:not([type="radio"]):not([type="checkbox"]):not([type="text"]):not([type="email"]),
 select,
 textarea {
   border: 0;

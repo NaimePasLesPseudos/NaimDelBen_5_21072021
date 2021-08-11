@@ -1,0 +1,16 @@
+.item{
+    background-color: $color-gamma;
+    color: $black;
+
+    &Img{
+        height: 90px;
+        width: 90px;
+        border-radius: $radius-small;
+    }
+
+    &Qn{
+        width: 80px;
+        border: 1px solid;
+        box-shadow: 1px 1px 1px $black;
+    }
+}
