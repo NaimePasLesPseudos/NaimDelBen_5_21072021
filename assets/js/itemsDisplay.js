@@ -2,7 +2,7 @@
 
 let url = 
     location.hostname === 'localhost' || location.hostname === '127.0.0.1'
-    ? 'http://localhost:3000/api/teddies' : './../../../backend/api/teddies'
+    ? 'http://localhost:3000/api/teddies' : 'https://oc-p5-api.herokuapp.com/api/teddies'
 
 // Appel API et affichage des produits
 
