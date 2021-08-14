@@ -1,6 +1,8 @@
 // URL de l'API
 
-let url = 'http://localhost:3000/api/teddies';
+let url = 
+    location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+    ? 'http://localhost:3000/api/teddies' : './../../../backend/api/teddies'
 
 // Appel API et affichage des produits
 
@@ -23,4 +25,3 @@ fetch(url)
                 </article>
                 `;
 })
-
