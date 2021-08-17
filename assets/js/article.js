@@ -15,8 +15,9 @@ fetch(url)
 .then(data => {
     for (let i in data) {
         if (data[i]._id === queryId) {
-            document.getElementById("product").innerHTML += 
-            `<img class="productImg" src="${data[i].imageUrl}" alt="">
+            document.getElementById("product").innerHTML = 
+            `
+            <img class="productImg" src="${data[i].imageUrl}" alt="">
             <div class="mx-10">
             <div class="flex justify-between align-items-center">
                 <h2>${data[i].name}</h2>
@@ -26,23 +27,18 @@ fetch(url)
             <p> 
             ${data[i].description}
             </p>
-                `;
-            let sel = document.getElementById("colorsList");
-            var opt = document.createElement("option");
+            `;
 
-            for (let j in data[i].colors) {
-                console.log(data[i].colors[j]);
-                console.log(j);
-                opt.value = j;
-                opt.text = data[i].colors[j];
-                sel.add(opt, null);
-            }
-
-            // opt.value = "3";
-            // opt.text = "Option: Value 3";
-
-            // sel.add(opt, null);
-        } 
+            let colorsList = document.getElementById("colorsList");
+            document.getElementById("colorsList").innerHTML = "";
+            data[i].colors.forEach(arrColor => {
+                console.log(arrColor);
+                let seloptions = document.createElement("option");
+                seloptions.innerHTML = arrColor;
+                seloptions.value = arrColor;
+                colorsList.appendChild(seloptions);
+            });
+        }
     }
 })
   
