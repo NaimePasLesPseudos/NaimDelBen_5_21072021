@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- <script type="module" src="main.js"></script> -->
+    <script type="module" src="./../assets/js/main.js"></script>
     <title>Orinoco - Boutique de peluche artisanale</title>
 </head>
 <body>
@@ -26,33 +26,18 @@
 
 
     <main>
-        <article class="product">
-            <img class="productImg" src="./../backend/images/teddy_5.jpg" alt="">
-            <div class="mx-10">
-                <div class="flex justify-between align-items-center">
-                    <h2>Teddy Bear 01</h2>
-                    <h2>9999€</h2>
-                </div>
-        
-                <p> 
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius ducimus cum non, officiis magnam fugiat ipsa illo libero aut eligendi, et delectus inventore nostrum illum consectetur praesentium placeat quis nulla !
-                </p>
-    
-                <p class="mt-10">Couleur :</p>
-                <select class="mb-10">
-                    <option value="salade">salade</option>
-                    <option value="tomate">tomate</option>
-                    <option value="oignons">oignons</option>
-                </select>
-    
-                <div class="flex flex-col justify-center text-center">
+        <article class="product" id="product">
+        </article>
+        <p class="mt-10">Couleur :</p> 
+            <select class="mb-10" id="colorsList">
+            </select>
+            <div class="flex flex-col justify-center text-center">
                     <a href="./shopping-cart.html">
                         <button class="btn align-center">Ajouter au panier</button>
                     </a>
                     <p>Livraison estimée : entre 1 à 3 semaines</p>
                 </div>
             </div>
-        </article>
     </main>
 
 
