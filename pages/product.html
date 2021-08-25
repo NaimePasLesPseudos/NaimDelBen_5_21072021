@@ -1,108 +1,119 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html data-theme="light" lang="fr"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script type="module" src="./../assets/js/main.js"></script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.13.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="./../assets/js/pages/product.mjs"></script>
     <title>Orinoco - Boutique de peluche artisanale</title>
 </head>
 <body>
+
+    <div class="loader" id="loader">
+    </div>
+
     <header>
-        <div class="header">
-            <nav class="flex justify-between align-items-center mx-24">
-                <i class="fas fa-bars"></i>
-                <a href="./../index.html">
-                    <img class="headerImg" src="./../assets/img/logo.png" alt="logo orinoco en haut de page">
-                </a>
-                <p><i class="fas fa-shopping-cart mr-8"></i>2</p>
-            </nav>
-        </div>
+        <nav class="navbar shadow-lg flex justify-around">
+            <a href="../index.html" class="">
+                <img class="headerImg h-16" src="../assets/img/logo.png" alt="logo orinoco en haut de page">
+            </a>
+            <a href="" class="indicator">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="indicator-item badge">2</div>
+            </a>
+        </nav>
     </header>
 
-
     <main>
-        <article class="product" id="product">
-        </article>
-        <p class="mt-10">Couleur :</p> 
-            <select class="mb-10" id="colorsList">
-            </select>
-            <div class="flex flex-col justify-center text-center">
-                    <a href="./shopping-cart.html">
-                        <button class="btn align-center">Ajouter au panier</button>
-                    </a>
+        <div class="product-item" id="product_item">
+
+        </div>
+    </main>
+
+    <footer class="p-10 footer bg-base-200 text-base-content footer-center">
+        <div class="">
+            <div>
+                <div>
+                 <i class="assuIcon fas fa-undo"></i>
+                </div>
+                <div>
+                 Échanges et retours gratuits
+                </div>
+            </div>
+            <div>
+                <div>
+                 <i class="assuIcon fas fa-hand-holding-usd"></i>
+                </div>
+                <div>
+                 Satisfait ou remboursé
+                </div>
+            </div>
+            <div>
+                <div>
+                 <i class="assuIcon fas fa-lock"></i>
+                </div>
+                <div>
+                 Paiement sécurisé
+                </div>
+            </div>
+        </div>
+         
+         <div>
+             <a class="link link-hover">Contact & FAQ</a> 
+             <a class="link link-hover">Blog</a> 
+             <a class="link link-hover">Press</a> 
+             <a class="link link-hover">CGV</a> 
+             <a class="link link-hover">Cookies</a>
+             <a class="link link-hover">Données</a>
+         </div> 
+         <div>
+             <div class="grid grid-flow-col gap-4">
+                 <a>
+                     <i class="rs fab fa-facebook-square"></i>
+                 </a> 
+                 <a>
+                     <i class="rs fab fa-instagram"></i>
+                 </a> 
+                 <a>
+                     <i class="rs fab fa-twitter"></i>
+                 </a>
+             </div>
+         </div> 
+         <div class="footerBottom rounded">
+             <img class="flex flex-wrap " src="/assets/img/logo.png" alt="logo orinoco en bas de page">
+           <p>Copyright © 2021 - Made by Naïm </p>
+         </div>
+       </footer>
+
+    <template id="product">
+        <article class="product" >
+            <img class="productImg" src="" alt="">
+            <div class="card bordered mx-24 mt-10">
+                <div class="flex justify-between">
+                    <h2 class="itemTitle card-title text-primary text-2xl"></h2>
+                    <h2 class="itemPrice card-title text-primary text-xl"></h2>
+                </div>
+        
+                <p class="itemDesc"> 
+                </p>
+    
+                <select class="select select-bordered w-full max-w-xs colorsList btn-group my-10 select-secondary">
+                    <option disabled="" selected="">Choisissez votre couleur :</option> 
+                </select>
+    
+                <div class="flex flex-col justify-center text-center">
+                    <button href="./shopping-cart.html" class="btn align-center addCart">
+                        Ajouter au panier
+                    </button>
                     <p>Livraison estimée : entre 1 à 3 semaines</p>
                 </div>
             </div>
-    </main>
+        </article>
+    </template>
 
-
-    <footer class="footer p-16 mt-16">
-        <div class="flex align-center">
-            <div class="assu flex flex-col align-items-center">
-                <div>
-                    <i class="assuIcon fas fa-undo"></i>
-                </div>
-                <p class="text-center">
-                    Échanges et retours gratuits
-                </p>
-            </div>
-            <div class="assu flex flex-col align-center align-items-center">
-                <div>
-                    <i class="assuIcon fas fa-hand-holding-usd"></i>
-                </div>
-                <p class="text-center">
-                    Satisfait ou remboursé
-                </p>
-            </div>
-            <div class="assu flex flex-col align-center align-items-center">
-                <div>
-                    <i class="assuIcon fas fa-lock"></i>
-                </div>
-                <p class="text-center">
-                    Paiement sécurisé
-                </p>
-            </div>
-        </div>
-
-        <div class="flex flex-col mt-24">
-            <p class="flex justify-center ">Suivez-nous</p>
-            <div class="flex flex-wrap justify-center">
-                <div class="mx-8">
-                    <a href="#">
-                        <i class="rs fab fa-facebook-square"></i>
-                    </a>
-                </div>
-                <div class="mx-8">
-                    <a href="#">
-                        <i class="rs fab fa-instagram"></i>
-                    </a>
-                </div>
-                <div class="mx-8">
-                    <a href="#">
-                        <i class="rs fab fa-twitter"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div>
-            <ul class="is-unstyled text-center mt-24">
-                <li><a href="#">Contact & FAQ</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Press</a></li>
-                <li><a href="#">CGV</a></li>
-                <li><a href="#">Cookies</a></li>
-                <li><a href="#">Données</a></li>
-            </ul>
-        </div>
-        <div class="footerImg flex mt-24">
-            <img class="flex flex-wrap " src="./../assets/img/logo.png" alt="logo orinoco en bas de page">
-        </div>
-    </footer>
 </body>
 </html>

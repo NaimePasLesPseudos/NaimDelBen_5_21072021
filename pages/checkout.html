@@ -1,114 +1,52 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html data-theme="light" lang="fr"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- <script type="module" src="main.js"></script> -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.13.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="./../assets/js/pages/checkout.mjs"></script>
     <title>Orinoco - Boutique de peluche artisanale</title>
 </head>
 <body>
+
+    <div class="loader" id="loader">
+    </div>
+
     <header>
-        <div class="header">
-            <nav class="flex justify-between align-items-center mx-24">
-                <i class="fas fa-bars"></i>
-                <a href="./../index.html">
-                    <img class="headerImg" src="./../assets/img/logo.png" alt="logo orinoco en haut de page">
-                </a>
-                <p><i class="fas fa-shopping-cart mr-8"></i>2</p>
-            </nav>
-        </div>
+        <nav class="navbar shadow-lg flex justify-around">
+            <a href="../index.html" class="">
+                <img class="headerImg h-16" src="../assets/img/logo.png" alt="logo orinoco en haut de page">
+            </a>
+            <a href="" class="indicator">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="indicator-item badge">2</div>
+            </a>
+        </nav>
     </header>
 
     <main class="tunnel">
-        <p class="mt-10 ml-10">Panier > Informations > Confirmation</p>
-        <div class="checkout mx-10">
-            <p>Merci pour la commande Keenu Reeves !</p>
-            <p>Voici un récapitulatif :</p>
-            <p class="text-bold">Résumé de votre commande :</p>
-            <div class="checkoutList">
-                <article class="flex align-items-center mb-8">
-                    <img class="checkoutList--img" src="./../backend/images/teddy_1.jpg" alt="">
-                    <p class="flex-grow text-bold">Teddy 01 x 99</p>
-                    <p class="text-bold">9999 €</p>
-                </article>
-                <article class="flex align-items-center mb-8">
-                    <img class="checkoutList--img" src="./../backend/images/teddy_2.jpg" alt="">
-                    <p class="flex-grow text-bold">Teddy 01 x 99</p>
-                    <p class="text-bold">9999 €</p>
-                </article>
-                <article class="flex align-items-center mb-8">
-                    <img class="checkoutList--img" src="./../backend/images/teddy_3.jpg" alt="">
-                    <p class="flex-grow text-bold">Teddy 01 x 99</p>
-                    <p class="text-bold">9999 €</p>
-                </article>
-            </div>
-            <div class="checkoutTotal">
-                <div class="flex justify-between">
-                    <p>Sous-total</p>
-                    <p>9999 €</p>
+
+        <ul class="w-full steps mt-10">
+            <li class="step step-primary">Panier</li> 
+            <li class="step step-primary">Information</li> 
+            <li class="step step-primary">Confirmation</li>
+        </ul>
+
+
+        <div class="checkout mx-24 pt-24">
+            <div class="card shadow-2xl lg:card-side bg-primary-focus text-primary-content text-center">
+                <div class="card-body">
+                    <p id="textCheckout"></p>
+                    <p id="orderCheckout"></p>
+                    <p id="priceCheckout"></p>
+                    <p id="TVACheckout"></p>
+                    <p id="shippingCheckout"></p>
                 </div>
-                <div class="flex justify-between">
-                    <p>Livraison</p>
-                    <p>5 €</p>
                 </div>
-                <div class="flex justify-between">
-                    <p>TVA France</p>
-                    <p>9999 €</p>
-                </div>
-                <br>
-                <div class="flex justify-between">
-                    <p>Total</p>
-                    <p class="text-bold">9999 €</p>
-                </div>
-            </div>
-            <p class="text-bold text-smaller">Informations Client :</p>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3">
-                <div>
-                    <p class="text-bold">Adresse de livraison</p>
-                    <p>
-                        Keenu Reeves <br>
-                        Sion S.A.R.L.
-                    </p>
-                    <p>
-                        12 rue de Californie <br>
-                        Résidence Wick <br>
-                        75000 - Paris <br>
-                        France
-                    </p>
-                </div>
-                <div>
-                    <p class="text-bold">Adresse de Facturation</p>
-                    <p>
-                        Keenu Reeves <br>
-                        Sion S.A.R.L.
-                    </p>
-                    <p>
-                        12 rue de Californie <br>
-                        Résidence Wick <br>
-                        75000 - Paris <br>
-                        France
-                    </p>
-                </div>
-                <div>
-                    <p class="text-bold">Coordonnées de Contact</p>
-                    <p>
-                        keenu.reeves@matr.ix <br>
-                        06 12 34 56 78
-                    </p>
-                </div>
-                
-            </div>
-            <p>
-                Votre commande sera préparé dans les 48 heures. <br>
-                Vous recevrez une confirmation d'envoie par mail dès qu'il sera expédié. <br>
-                <br>
-                Livraison prévue entre le 12 et le 14 août 2021.
-            </p>
         </div>
     </main>
 
