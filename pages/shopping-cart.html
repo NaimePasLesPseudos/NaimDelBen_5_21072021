@@ -13,22 +13,17 @@
 </head>
 <body>
 
-    <div class="loader" id="loader">
-    </div>
-
     <header>
         <nav class="navbar shadow-lg flex justify-around">
-            <a href="../index.html" class="">
+            <a href="/index.html" class="">
                 <img class="headerImg h-16" src="../assets/img/logo.png" alt="logo orinoco en haut de page">
             </a>
-            <a href="" class="indicator">
+            <a href="/pages/shopping-cart.html" class="indicator">
                 <i class="fas fa-shopping-cart"></i>
-                <div class="indicator-item badge">2</div>
             </a>
         </nav>
     </header>
-
-
+    
     <main class="tunnel">
         <ul class="w-full steps mt-10">
             <li class="step step-primary">Panier</li> 
@@ -36,16 +31,27 @@
             <li class="step">Confirmation</li>
         </ul>
 
+        <div class="emptyCart mx-24 pt-24">
+            <div class="card shadow-2xl lg:card-side bg-primary-focus text-primary-content text-center">
+                <div class="card-body">
+                    <p>Votre panier est vide !</p>
+                </div>
+            </div>
+        </div>
+        
         <div id="cartResume" class="flex flex-col mt-10">
         </div>
 
-        <div class="totalPrice">
-            <p class="text-right subtotalPrice"></p>
-            <p class="text-right shippingPrice"></p>
-            <p class="text-right text-bold superTotalPrice"></p>
+        <div class="totalPrice mx-10 mt-10 flex justify-between">
+            <p class="subtotalPrice mt-2"></p>
+            <p class="shippingPrice mt-2"></p>
+            <div class="divider"></div>
+            <p class="text-bold superTotalPrice font-bold mt-2"></p>
         </div>
 
-        <div id="formCheckout" class="form-control mt-10 mx-10">
+
+        <div id="formCheckout" class=" text-center mt-10 mx-10 hidden">
+            <form class="form-control">
                 <legend class="text-bold">Coordonées e-mail :</legend>
                 <p>
                     <input class="form input input-primary input-bordered" type="email" name="email" id="email" placeholder="Adresse e-mail" required>
@@ -75,6 +81,7 @@
                   </li>
                 </ul>
                     <button class="btn align-center mb-24 mt-2" id="btnForm">Valider ma commande</button>
+            </form>
         </div>
     </main>
 
@@ -133,7 +140,7 @@
          </div>
        </footer>
     
-    <template id="cart">
+    <template id="product_row">
         <article class="flex flex-row rounded-lg bg-base-200 mx-10 p-2 mt-2">
                 <img class="itemImg mask mask-hexagon-2 w-36" src="" alt="">
             <div class="flex flex-row flex-1 justify-between ">

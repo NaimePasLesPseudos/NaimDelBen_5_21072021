@@ -1,13 +1,9 @@
 import api from '../modules/api.mjs'
-import loader from '../modules/loader.mjs'
-
-loader()
 
 const template = document.querySelector("#product_item")
     , product_list_element = document.querySelector('#product_list')
 
 let productList = []
-
 
 try {
     productList = await api.getProducts()
@@ -28,5 +24,3 @@ productList.forEach(product => {
 
     product_list_element.appendChild(product_element)
 })
-
-

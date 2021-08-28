@@ -1,32 +1,23 @@
 import { dateShipping } from "../modules/shipping.mjs";
 import { calcTVA } from "../modules/tva.mjs";
-import loader from '../modules/loader.mjs'
-
-loader()
-
-const url = window.location
 
 const textCheckout = document.querySelector('#textCheckout')
     , orderCheckout = document.querySelector('#orderCheckout')
-    , priceCheckout = document.querySelector('#priceCheckout')
-    , TVACheckout = document.querySelector('#TVACheckout')
     , shippingCheckout = document.querySelector('#shippingCheckout')
+    , outCheckout = document.querySelector('#outCheckout')
 
-const orderParams = new URLSearchParams(url.search.substring(1))
-    , orderId = orderParams.get('order')
-    , priceOrder = orderParams.get('price')
+let checkoutJSON = localStorage.getItem('checkout')
+let checkout = JSON.parse(checkoutJSON)
+
+console.log(checkout)
 
 // vérification des informations de confirmation
-if (orderId === null || priceOrder === null) {
-    textCheckout.textContent = 'Votre panier est vide !'
+if (checkout === null) {
+    textCheckout.textContent = 'Pas de commande car votre panier est vide !'
 } else {
-    textCheckout.innerHTML = 
-                            `
-                            Merci pour la commande ! <br>
-                            Voici votre numéro de commande :
-                            `
-    orderCheckout.textContent = orderId
-    priceCheckout.textContent = priceOrder + ' €'
-    TVACheckout.textContent = '(dont TVA à 20% : ' + calcTVA(priceOrder) + ' €)'
+    textCheckout.textContent = 'Votre commande à bien été validé ' + checkout.contact.firstName + ' ' + checkout.contact.lastName + ' !'
+    orderCheckout.textContent = 'Voici votre numéro de commande : ' + checkout.orderId
     shippingCheckout.textContent = 'Votre commande sera livrée vers le : ' + dateShipping.toLocaleString()
+    outCheckout.textContent = 'Retrouvez votre commande à l\'e-mail suivant : ' + checkout.contact.email + ' ' + 'Merci pour votre confiance ! À bientôt.'
+    localStorage.clear()
 }

@@ -1,14 +1,14 @@
-function addCart(queryId) {
+function addCart(product_id) {
     document.querySelector('.addCart').addEventListener('click', event => {
         // Vérification du produit dans le local storage
-        if (!localStorage.getItem(queryId)) {
-            // ajout au local storage
-            localStorage.setItem(queryId, 1)
+        if (!localStorage.getItem(product_id)) {
+            // ajout du produit au local storage
+            localStorage.setItem(product_id, 1)
         } else {
             //Ajout d'une quantité du produit
-            let keyValue = Number(localStorage.getItem(queryId))
-            keyValue++
-            localStorage.setItem(queryId, keyValue)
+            let quantity = Number(localStorage.getItem(product_id))
+            quantity++
+            localStorage.setItem(product_id, quantity)
         }
         
         // Pop-up de confirmation d'ajout au panier

@@ -26,21 +26,21 @@
   }
   
 #loader-image {
-z-index: 100;
+    z-index: 100;
 }
 
 .hide-loader{
-display:none;
+    display:none;
 }
 
-/* $color-gradient-alpha: linear-gradient(
+/* linear-gradient(
   135deg,
   #E78B06 0%,
   #B8718B 33%,
   #8F5BFE 100%
 );
 
-$color-gradient-alpha-transi: linear-gradient(
+linear-gradient(
   98.92deg,
   #8F5BFE 0%,
   #B8718B 29.95%,

@@ -8,8 +8,8 @@ let shippingPrice = 5,
     superTotalPrice = 0
 
 function priceCart(subtotalPrice) {
-    superTotalPrice = subtotalPrice/100 + shippingPrice
-    subtotal_element.textContent = 'Sous-total : ' + subtotalPrice/100 + '€'
+    superTotalPrice = subtotalPrice + shippingPrice
+    subtotal_element.textContent = 'Sous-total : ' + subtotalPrice + '€'
     shippingPrice_element.textContent = 'Frais de Port : ' + shippingPrice + '€'
     superTotalPrice_element.textContent = 'Total : ' +  superTotalPrice + '€'
 }

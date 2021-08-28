@@ -13,20 +13,17 @@
 </head>
 <body>
 
-    <div class="loader" id="loader">
-    </div>
-
     <header>
         <nav class="navbar shadow-lg flex justify-around">
-            <a href="../index.html" class="">
+            <a href="/index.html" class="">
                 <img class="headerImg h-16" src="../assets/img/logo.png" alt="logo orinoco en haut de page">
             </a>
-            <a href="" class="indicator">
+            <a href="/pages/shopping-cart.html" class="indicator">
                 <i class="fas fa-shopping-cart"></i>
-                <div class="indicator-item badge">2</div>
             </a>
         </nav>
     </header>
+
 
     <main class="tunnel">
 
@@ -42,77 +39,67 @@
                 <div class="card-body">
                     <p id="textCheckout"></p>
                     <p id="orderCheckout"></p>
-                    <p id="priceCheckout"></p>
-                    <p id="TVACheckout"></p>
                     <p id="shippingCheckout"></p>
+                    <p id="outCheckout"></p>
                 </div>
                 </div>
         </div>
     </main>
 
 
-    <footer class="footer p-16 mt-16">
-        <div class="flex align-center">
-            <div class="assu flex flex-col align-items-center">
+    <footer class="p-10 footer bg-base-200 text-base-content footer-center">
+        <div class="">
+            <div>
                 <div>
-                    <i class="assuIcon fas fa-undo"></i>
+                 <i class="assuIcon fas fa-undo"></i>
                 </div>
-                <p class="text-center">
-                    Échanges et retours gratuits
-                </p>
-            </div>
-            <div class="assu flex flex-col align-center align-items-center">
                 <div>
-                    <i class="assuIcon fas fa-hand-holding-usd"></i>
+                 Échanges et retours gratuits
                 </div>
-                <p class="text-center">
-                    Satisfait ou remboursé
-                </p>
             </div>
-            <div class="assu flex flex-col align-center align-items-center">
+            <div>
                 <div>
-                    <i class="assuIcon fas fa-lock"></i>
+                 <i class="assuIcon fas fa-hand-holding-usd"></i>
                 </div>
-                <p class="text-center">
-                    Paiement sécurisé
-                </p>
+                <div>
+                 Satisfait ou remboursé
+                </div>
             </div>
-        </div>
-
-        <div class="flex flex-col mt-24">
-            <p class="flex justify-center ">Suivez-nous</p>
-            <div class="flex flex-wrap justify-center">
-                <div class="mx-8">
-                    <a href="#">
-                        <i class="rs fab fa-facebook-square"></i>
-                    </a>
+            <div>
+                <div>
+                 <i class="assuIcon fas fa-lock"></i>
                 </div>
-                <div class="mx-8">
-                    <a href="#">
-                        <i class="rs fab fa-instagram"></i>
-                    </a>
-                </div>
-                <div class="mx-8">
-                    <a href="#">
-                        <i class="rs fab fa-twitter"></i>
-                    </a>
+                <div>
+                 Paiement sécurisé
                 </div>
             </div>
         </div>
-
-        <div>
-            <ul class="is-unstyled text-center mt-24">
-                <li><a href="#">Contact & FAQ</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Press</a></li>
-                <li><a href="#">CGV</a></li>
-                <li><a href="#">Cookies</a></li>
-                <li><a href="#">Données</a></li>
-            </ul>
-        </div>
-        <div class="footerImg flex mt-24">
-            <img class="flex flex-wrap " src="./../assets/img/logo.png" alt="logo orinoco en bas de page">
-        </div>
-    </footer>
+         
+         <div>
+             <a class="link link-hover">Contact & FAQ</a> 
+             <a class="link link-hover">Blog</a> 
+             <a class="link link-hover">Press</a> 
+             <a class="link link-hover">CGV</a> 
+             <a class="link link-hover">Cookies</a>
+             <a class="link link-hover">Données</a>
+         </div> 
+         <div>
+             <div class="grid grid-flow-col gap-4">
+                 <a>
+                     <i class="rs fab fa-facebook-square"></i>
+                 </a> 
+                 <a>
+                     <i class="rs fab fa-instagram"></i>
+                 </a> 
+                 <a>
+                     <i class="rs fab fa-twitter"></i>
+                 </a>
+             </div>
+         </div> 
+         <div class="footerBottom rounded">
+             <img class="flex flex-wrap " src="/assets/img/logo.png" alt="logo orinoco en bas de page">
+           <p>Copyright © 2021 - Made by Naïm </p>
+         </div>
+       </footer>
 </body>
 </html>
