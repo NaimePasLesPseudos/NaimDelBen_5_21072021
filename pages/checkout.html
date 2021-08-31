@@ -1,180 +1,105 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html data-theme="light" lang="fr"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- <script type="module" src="main.js"></script> -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.13.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="./../assets/js/pages/checkout.mjs"></script>
     <title>Orinoco - Boutique de peluche artisanale</title>
 </head>
 <body>
+
     <header>
-        <div class="header">
-            <nav class="flex justify-between align-items-center mx-24">
-                <i class="fas fa-bars"></i>
-                <a href="./../index.html">
-                    <img class="headerImg" src="./../assets/img/logo.png" alt="logo orinoco en haut de page">
-                </a>
-                <p><i class="fas fa-shopping-cart mr-8"></i>2</p>
-            </nav>
-        </div>
+        <nav class="navbar shadow-lg flex justify-around">
+            <a href="/index.html" class="">
+                <img class="headerImg h-16" src="../assets/img/logo.png" alt="logo orinoco en haut de page">
+            </a>
+            <a href="/pages/shopping-cart.html" class="indicator">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </nav>
     </header>
 
+
     <main class="tunnel">
-        <p class="mt-10 ml-10">Panier > Informations > Confirmation</p>
-        <div class="checkout mx-10">
-            <p>Merci pour la commande Keenu Reeves !</p>
-            <p>Voici un récapitulatif :</p>
-            <p class="text-bold">Résumé de votre commande :</p>
-            <div class="checkoutList">
-                <article class="flex align-items-center mb-8">
-                    <img class="checkoutList--img" src="./../backend/images/teddy_1.jpg" alt="">
-                    <p class="flex-grow text-bold">Teddy 01 x 99</p>
-                    <p class="text-bold">9999 €</p>
-                </article>
-                <article class="flex align-items-center mb-8">
-                    <img class="checkoutList--img" src="./../backend/images/teddy_2.jpg" alt="">
-                    <p class="flex-grow text-bold">Teddy 01 x 99</p>
-                    <p class="text-bold">9999 €</p>
-                </article>
-                <article class="flex align-items-center mb-8">
-                    <img class="checkoutList--img" src="./../backend/images/teddy_3.jpg" alt="">
-                    <p class="flex-grow text-bold">Teddy 01 x 99</p>
-                    <p class="text-bold">9999 €</p>
-                </article>
-            </div>
-            <div class="checkoutTotal">
-                <div class="flex justify-between">
-                    <p>Sous-total</p>
-                    <p>9999 €</p>
+
+        <ul class="w-full steps mt-10">
+            <li class="step step-primary">Panier</li> 
+            <li class="step step-primary">Information</li> 
+            <li class="step step-primary">Confirmation</li>
+        </ul>
+
+
+        <div class="checkout mx-24 pt-24">
+            <div class="card shadow-2xl lg:card-side bg-primary-focus text-primary-content text-center">
+                <div class="card-body">
+                    <p id="textCheckout"></p>
+                    <p id="orderCheckout"></p>
+                    <p id="shippingCheckout"></p>
+                    <p id="outCheckout"></p>
                 </div>
-                <div class="flex justify-between">
-                    <p>Livraison</p>
-                    <p>5 €</p>
                 </div>
-                <div class="flex justify-between">
-                    <p>TVA France</p>
-                    <p>9999 €</p>
-                </div>
-                <br>
-                <div class="flex justify-between">
-                    <p>Total</p>
-                    <p class="text-bold">9999 €</p>
-                </div>
-            </div>
-            <p class="text-bold text-smaller">Informations Client :</p>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3">
-                <div>
-                    <p class="text-bold">Adresse de livraison</p>
-                    <p>
-                        Keenu Reeves <br>
-                        Sion S.A.R.L.
-                    </p>
-                    <p>
-                        12 rue de Californie <br>
-                        Résidence Wick <br>
-                        75000 - Paris <br>
-                        France
-                    </p>
-                </div>
-                <div>
-                    <p class="text-bold">Adresse de Facturation</p>
-                    <p>
-                        Keenu Reeves <br>
-                        Sion S.A.R.L.
-                    </p>
-                    <p>
-                        12 rue de Californie <br>
-                        Résidence Wick <br>
-                        75000 - Paris <br>
-                        France
-                    </p>
-                </div>
-                <div>
-                    <p class="text-bold">Coordonnées de Contact</p>
-                    <p>
-                        keenu.reeves@matr.ix <br>
-                        06 12 34 56 78
-                    </p>
-                </div>
-                
-            </div>
-            <p>
-                Votre commande sera préparé dans les 48 heures. <br>
-                Vous recevrez une confirmation d'envoie par mail dès qu'il sera expédié. <br>
-                <br>
-                Livraison prévue entre le 12 et le 14 août 2021.
-            </p>
         </div>
     </main>
 
 
-    <footer class="footer p-16 mt-16">
-        <div class="flex align-center">
-            <div class="assu flex flex-col align-items-center">
+    <footer class="p-10 footer bg-base-200 text-base-content footer-center">
+        <div class="">
+            <div>
                 <div>
-                    <i class="assuIcon fas fa-undo"></i>
+                 <i class="assuIcon fas fa-undo"></i>
                 </div>
-                <p class="text-center">
-                    Échanges et retours gratuits
-                </p>
-            </div>
-            <div class="assu flex flex-col align-center align-items-center">
                 <div>
-                    <i class="assuIcon fas fa-hand-holding-usd"></i>
+                 Échanges et retours gratuits
                 </div>
-                <p class="text-center">
-                    Satisfait ou remboursé
-                </p>
             </div>
-            <div class="assu flex flex-col align-center align-items-center">
+            <div>
                 <div>
-                    <i class="assuIcon fas fa-lock"></i>
+                 <i class="assuIcon fas fa-hand-holding-usd"></i>
                 </div>
-                <p class="text-center">
-                    Paiement sécurisé
-                </p>
+                <div>
+                 Satisfait ou remboursé
+                </div>
             </div>
-        </div>
-
-        <div class="flex flex-col mt-24">
-            <p class="flex justify-center ">Suivez-nous</p>
-            <div class="flex flex-wrap justify-center">
-                <div class="mx-8">
-                    <a href="#">
-                        <i class="rs fab fa-facebook-square"></i>
-                    </a>
+            <div>
+                <div>
+                 <i class="assuIcon fas fa-lock"></i>
                 </div>
-                <div class="mx-8">
-                    <a href="#">
-                        <i class="rs fab fa-instagram"></i>
-                    </a>
-                </div>
-                <div class="mx-8">
-                    <a href="#">
-                        <i class="rs fab fa-twitter"></i>
-                    </a>
+                <div>
+                 Paiement sécurisé
                 </div>
             </div>
         </div>
-
-        <div>
-            <ul class="is-unstyled text-center mt-24">
-                <li><a href="#">Contact & FAQ</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Press</a></li>
-                <li><a href="#">CGV</a></li>
-                <li><a href="#">Cookies</a></li>
-                <li><a href="#">Données</a></li>
-            </ul>
-        </div>
-        <div class="footerImg flex mt-24">
-            <img class="flex flex-wrap " src="./../assets/img/logo.png" alt="logo orinoco en bas de page">
-        </div>
-    </footer>
+         
+         <div>
+             <a class="link link-hover">Contact & FAQ</a> 
+             <a class="link link-hover">Blog</a> 
+             <a class="link link-hover">Press</a> 
+             <a class="link link-hover">CGV</a> 
+             <a class="link link-hover">Cookies</a>
+             <a class="link link-hover">Données</a>
+         </div> 
+         <div>
+             <div class="grid grid-flow-col gap-4">
+                 <a>
+                     <i class="rs fab fa-facebook-square"></i>
+                 </a> 
+                 <a>
+                     <i class="rs fab fa-instagram"></i>
+                 </a> 
+                 <a>
+                     <i class="rs fab fa-twitter"></i>
+                 </a>
+             </div>
+         </div> 
+         <div class="footerBottom rounded">
+             <img class="flex flex-wrap " src="/assets/img/logo.png" alt="logo orinoco en bas de page">
+           <p>Copyright © 2021 - Made by Naïm </p>
+         </div>
+       </footer>
 </body>
 </html>

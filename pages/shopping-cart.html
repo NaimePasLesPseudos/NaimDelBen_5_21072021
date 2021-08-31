@@ -1,145 +1,166 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html data-theme="light" lang="fr"> 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- <script type="module" src="main.js"></script> -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@1.13.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" src="./../assets/js/pages/shopping_cart.js"></script>
     <title>Orinoco - Boutique de peluche artisanale</title>
 </head>
 <body>
+
     <header>
-        <div class="header">
-            <nav class="flex justify-between align-items-center mx-24">
-                <i class="fas fa-bars"></i>
-                <a href="./../index.html">
-                    <img class="headerImg" src="./../assets/img/logo.png" alt="logo orinoco en haut de page">
-                </a>
-                <p><i class="fas fa-shopping-cart mr-8"></i>2</p>
-            </nav>
-        </div>
-    </header>
-
-
-    <main class="tunnel">
-        <p class="mt-10 ml-10">Panier > Informations > Confirmation</p>
-        <div>
-            <article class="item flex align-items-center px-8 py-16 my-16">
-                <i class="fas fa-trash mr-8"></i>
-                <div>
-                    <img class="itemImg" src="./../backend/images/teddy_1.jpg" alt="">
-                </div>
-                <div class="flex-grow pl-8">
-                    <h3>teddy 01</h3>
-                    <p>9€</p>
-                </div>
-                <div class="text-right">
-                    <div class="itemQn flex justify-around">
-                        <button> - </button>
-                        <p>99</p>
-                        <button>+</button>
-                    </div>
-                    <h3 class="text-bold"> 9999€ </h3>
-                </div>
-            </article>
-            <p class="text-right">Sous-total - 9999€</p>
-        </div>
-        <div class="flex flex-col justify-center text-center">
-            <form action="#">
-                <ul class="is-unstyled">
-                  <li>
-                    <input type="checkbox" class="checkbox" id="c1">
-                    <label for="c1">J'accepte les conditions générales de vente</label>
-                  </li>
-                </ul>
-              </form>
-            <button class="btn align-center">Valider mon panier</button>
-        </div>
-
-
-        <div class="mx-10">
-            <form action="/pages/checkout.html" method="post">
-                <p>Coordonées :</p>
-                <p>
-                    <input class="form" type="email" name="mail" id="mail" placeholder="Adresse e-mail">
-                </p>
-                <p>Adresse de livraison :</p>
-                <p>
-                    <input class="form" type="text" name="firstname" id="firstname" placeholder="Prénom">
-                </p>
-                <p>
-                    <input class="form" type="text" name="name" id="name" placeholder="Nom">
-                </p>
-                <p>
-                    <input class="form" type="text" name="entreprise" id="entreprise" placeholder="Entreprise (facultatif)">
-                </p>
-                <p>
-                    <input class="form" type="text" name="adress" id="adress" placeholder="Adresse">
-                </p>
-                <p>
-                    <input class="form" type="text" name="adress" id="adress" placeholder="Complément d'adresse (facultatif)">
-                </p>
-                <p>
-                    <input class="form" type="text" name="codepostal" id="codepostal" placeholder="Code Postal">
-                </p>
-                <p>
-                    <input class="form" type="text" name="city" id="city" placeholder="Ville">
-                </p>
-                <p>
-                    <input class="form" type="text" name="country" id="country" placeholder="Pays">
-                </p>
-                <p>
-                    <input class="form" type="text" name="phonenumber" id="phonenumber" placeholder="Numéro de téléphone">
-                </p>
-            </form>
-            <form action="#">
-                <ul class="is-unstyled">
-                  <li>
-                    <input type="checkbox" class="checkbox" id="c1">
-                    <label for="c1">Mon adresse de facturation est différente</label>
-                  </li>
-                </ul>
-              </form>
-            <a href="/pages/checkout.html">
-                <button class="btn align-center">Valider ma commande</button>
+        <nav class="navbar shadow-lg flex justify-around">
+            <a href="/index.html" class="">
+                <img class="headerImg h-16" src="../assets/img/logo.png" alt="logo orinoco en haut de page">
             </a>
+            <a href="/pages/shopping-cart.html" class="indicator">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </nav>
+    </header>
+    
+    <main class="tunnel">
+        <ul class="w-full steps mt-10">
+            <li class="step step-primary">Panier</li> 
+            <li class="step step-primary">Information</li> 
+            <li class="step">Confirmation</li>
+        </ul>
+
+        <div class="emptyCart mx-24 pt-24">
+            <div class="card shadow-2xl lg:card-side bg-primary-focus text-primary-content text-center">
+                <div class="card-body">
+                    <p>Votre panier est vide !</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="cartResume" class="flex flex-col mt-10">
+        </div>
+
+        <div class="totalPrice mx-10 mt-10 flex justify-between">
+            <p class="subtotalPrice mt-2"></p>
+            <p class="shippingPrice mt-2"></p>
+            <div class="divider"></div>
+            <p class="text-bold superTotalPrice font-bold mt-2"></p>
         </div>
 
 
+        <div id="formCheckout" class=" text-center mt-10 mx-10 hidden">
+            <form class="form-control">
+                <legend class="text-bold">Coordonées e-mail :</legend>
+                <p>
+                    <input class="form input input-primary input-bordered" type="email" name="email" id="email" placeholder="Adresse e-mail" required>
+                    <span class="message text-italic" id="email"></span>
+                </p>
+                <legend class="text-bold mt-5">Adresse de livraison :</legend>
+                <p>
+                    <input class="form input input-primary input-bordered" type="text" name="firstname" id="firstname" placeholder="Prénom" required>
+                    <span class="message text-italic" id="firstname"></span>
+                </p>
+                <p>
+                    <input class="form input input-primary input-bordered mt-2" type="text" name="name" id="name" placeholder="Nom" required>
+                    <span class="message text-italic" id="name"></span>
+                </p>
+                <p>
+                    <input class="form input input-primary input-bordered mt-2" type="text" name="address" id="address" placeholder="Adresse" required>
+                    <span class="message text-italic" id="address"></span>
+                </p>
+                <p>
+                    <input class="form input input-primary input-bordered mt-2" type="text" name="city" id="city" placeholder="Ville" required>
+                    <span class="message text-italic" id="city"></span>
+                </p>
+                <ul class="is-unstyled">
+                  <li class="text-center mt-24">
+                    <input type="checkbox" class="checkbox" id="valideCGV" required>
+                    <label for="valideCGV">J'accepte les conditions de vente</label>
+                  </li>
+                </ul>
+                    <button class="btn align-center mb-24 mt-2" id="btnForm">Valider ma commande</button>
+            </form>
+        </div>
     </main>
 
-
-    <footer class="footer p-16 mt-16">
-        <div class="flex align-center">
-            <div class="assu flex flex-col align-items-center">
+    <footer class="p-10 footer bg-base-200 text-base-content footer-center">
+        <div class="">
+            <div>
                 <div>
-                    <i class="assuIcon fas fa-undo"></i>
+                 <i class="assuIcon fas fa-undo"></i>
                 </div>
-                <p class="text-center">
-                    Échanges et retours gratuits
-                </p>
+                <div>
+                 Échanges et retours gratuits
+                </div>
             </div>
-            <div class="assu flex flex-col align-center align-items-center">
+            <div>
                 <div>
-                    <i class="assuIcon fas fa-hand-holding-usd"></i>
+                 <i class="assuIcon fas fa-hand-holding-usd"></i>
                 </div>
-                <p class="text-center">
-                    Satisfait ou remboursé
-                </p>
+                <div>
+                 Satisfait ou remboursé
+                </div>
             </div>
-            <div class="assu flex flex-col align-center align-items-center">
+            <div>
                 <div>
-                    <i class="assuIcon fas fa-lock"></i>
+                 <i class="assuIcon fas fa-lock"></i>
                 </div>
-                <p class="text-center">
-                    Paiement sécurisé
-                </p>
+                <div>
+                 Paiement sécurisé
+                </div>
             </div>
         </div>
-    </footer>
+         
+         <div>
+             <a class="link link-hover">Contact & FAQ</a> 
+             <a class="link link-hover">Blog</a> 
+             <a class="link link-hover">Press</a> 
+             <a class="link link-hover">CGV</a> 
+             <a class="link link-hover">Cookies</a>
+             <a class="link link-hover">Données</a>
+         </div> 
+         <div>
+             <div class="grid grid-flow-col gap-4">
+                 <a>
+                     <i class="rs fab fa-facebook-square"></i>
+                 </a> 
+                 <a>
+                     <i class="rs fab fa-instagram"></i>
+                 </a> 
+                 <a>
+                     <i class="rs fab fa-twitter"></i>
+                 </a>
+             </div>
+         </div> 
+         <div class="footerBottom rounded">
+             <img class="flex flex-wrap " src="/assets/img/logo.png" alt="logo orinoco en bas de page">
+           <p>Copyright © 2021 - Made by Naïm </p>
+         </div>
+       </footer>
+    
+    <template id="product_row">
+        <article class="flex flex-row rounded-lg bg-base-200 mx-10 p-2 mt-2">
+                <img class="itemImg mask mask-hexagon-2 w-36" src="" alt="">
+            <div class="flex flex-row flex-1 justify-between ">
+                <div class="flex flex-col flex-1 ">
+                    <h3 class="cartTitle font-extrabold text-primary"></h3>
+                    <p class="cartPriceU"></p>
+                </div>
+                <div class="flex flex-col"> 
+                    <div class="itemQn flex btn-group">
+                        <button class="sustractQuantity btn btn-xs"> - </button>
+                        <p class="cartNumber btn btn-xs no-animation" ></p>
+                        <button class="addQuantity btn btn-xs"> + </button>
+                        <button class="trash btn btn-outline btn-square btn-xs">
+                            <i class="fas fa-trash"></i>
+                        </button> 
+                    </div>
+                    <h3 class="cartPriceTotal text-xl text-secondary"></h3>
+                </div>
+            </div>
+        </article>
+    </template>
 </body>
 </html>
