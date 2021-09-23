@@ -1,5 +1,4 @@
 import { dateShipping } from "../modules/shipping.mjs";
-import { calcTVA } from "../modules/tva.mjs";
 
 const textCheckout = document.querySelector('#textCheckout')
     , orderCheckout = document.querySelector('#orderCheckout')
