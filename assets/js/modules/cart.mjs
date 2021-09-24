@@ -1,6 +1,7 @@
 // Ajoute le produit dans localStorage
 function addCart(product_id) {
     document.querySelector('.addCart').addEventListener('click', event => {
+        
         // Vérification du produit dans le local storage
         if (!localStorage.getItem(product_id)) {
             // ajout du produit au local storage

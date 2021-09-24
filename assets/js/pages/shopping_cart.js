@@ -14,6 +14,7 @@ const subtotal_element = document.querySelector('#subtotalPrice .value')
     , shippingPrice = 5
     , cart = {}
 
+// Construction du panier avec les produits du local storage
 const buildCart = (productList) => {
     for (let i = 0; i < localStorage.length; i++) {
         const product_id = localStorage.key(i)
@@ -30,8 +31,8 @@ const buildCart = (productList) => {
     buildCartPrice()
 }
 
+// Construction des prix totaux
 const buildCartPrice = () => {
-    // Object.values(cart).forEach(product => subTotalPrice += product.price / 100 * product.quantity )
     const subTotalPrice = Object.values(cart).reduce((subTotal, product) => subTotal + product.price / 100 * product.quantity, 0)
 
     subtotal_element.textContent = subTotalPrice
@@ -39,6 +40,7 @@ const buildCartPrice = () => {
     totalPrice_element.textContent = subTotalPrice + shippingPrice
 }
 
+// Construction pour l'affichage d'une ligne/produit
 const buildProductRow = product => {
     const product_element = document.importNode(template_product_row.content, true).querySelector('article')
         , image_element = product_element.querySelector('img')
@@ -47,7 +49,7 @@ const buildProductRow = product => {
         , number_element = product_element.querySelector('.cartNumber')
         , priceTotal_element = product_element.querySelector('.priceTotal .value')
         , trashItem_element = product_element.querySelector('.trash')
-        , sustractQuantity_element = product_element.querySelector('.sustractQuantity')
+        , subtractQuantity_element = product_element.querySelector('.subtractQuantity')
         , addQuantity_element = product_element.querySelector('.addQuantity')
         , price = product.price / 100
 
@@ -69,7 +71,7 @@ const buildProductRow = product => {
 
     product_item_element.appendChild(product_element)
 
-    sustractQuantity_element.addEventListener('click', function(){
+    subtractQuantity_element.addEventListener('click', function(){
         if (product.quantity === 1) return
         product.quantity = subtractItem(product._id, product.quantity)
         product.total = price * product.quantity
@@ -98,75 +100,78 @@ try {
 }
 
 // Vérification informations clients
-// const setFieldMessage = (inputField, msg, boolean) => {
-//     const input = document.querySelector(`#${inputField}`)
-//     const messageEl = document.querySelector(`#${inputField}.message`)
-//     input.classList.toggle('text-bold', boolean)
-//     messageEl.textContent = msg
-// }
+const setFieldMessage = (inputField, msg, boolean) => {
+    const input = document.querySelector(`#${inputField}`)
+    const messageEl = document.querySelector(`#${inputField}.message`)
+    input.classList.toggle('text-bold', boolean)
+    messageEl.textContent = msg
+}
 
-// const resetField = (inputField) => {
-//     const input = document.querySelector(`#${inputField}`)
-//     const messageEl = document.querySelector(`.${inputField}-field .message`)
-//     setFieldMessage(inputField, '', false)
-// }
+const resetField = (inputField) => {
+    const input = document.querySelector(`#${inputField}`)
+    const messageEl = document.querySelector(`.${inputField}-field .message`)
+    setFieldMessage(inputField, '', false)
+}
 
 // Vérification email
-// emailInput.addEventListener('blur', function (event) {
-//     const eventValue = emailInput.value
-//     const eventRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-//     const isValidEvent = eventRegex.test(eventValue)
+emailInput.addEventListener('blur', function (event) {
+    const eventValue = emailInput.value
+    const eventRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const isValidEvent = eventRegex.test(eventValue)
 
-//     if (!isValidEvent) setFieldMessage('email','Votre email semble incorrect', true)
-// })
+    if (!isValidEvent) setFieldMessage('email','Votre email semble incorrect', true)
+})
 
-// // Vérification prénom
-// firstnameInput.addEventListener('blur', function (event) {
-//     const eventValue = firstnameInput.value
-//     const eventRegex = /(?:[A-Z][a-z.-]+[ ]?)+/i
-//     const isValidEvent = eventRegex.test(eventValue)
+// Vérification prénom
+firstnameInput.addEventListener('blur', function (event) {
+    const eventValue = firstnameInput.value
+    const eventRegex = /(?:[A-Z][a-z.-]+[ ]?)+/i
+    const isValidEvent = eventRegex.test(eventValue)
 
-//     if (!isValidEvent) setFieldMessage('firstname','Votre prénom semble incorrect', true)
-// })
+    if (!isValidEvent) setFieldMessage('firstname','Votre prénom semble incorrect', true)
+})
 
-// // Vérification nom
-// nameInput.addEventListener('blur', function (event) {
-//     const eventValue = nameInput.value
-//     const eventRegex = /(?:[A-Z][a-z.-]+[ ]?)+/i
-//     const isValidEvent = eventRegex.test(eventValue)
+// Vérification nom
+nameInput.addEventListener('blur', function (event) {
+    const eventValue = nameInput.value
+    const eventRegex = /(?:[A-Z][a-z.-]+[ ]?)+/i
+    const isValidEvent = eventRegex.test(eventValue)
 
-//     if (!isValidEvent) setFieldMessage('name','Votre nom semble incorrect', true)
-// })
+    if (!isValidEvent) setFieldMessage('name','Votre nom semble incorrect', true)
+})
 
-// // Vérification addresse
-// addressInput.addEventListener('blur', function (event) {
-//     const eventValue = addressInput.value
-//     const eventRegex = /(?:[0-9]+[ ]+[A-Z][a-z.-]+[ ]?)+/i
-//     const isValidEvent = eventRegex.test(eventValue)
+// Vérification addresse
+addressInput.addEventListener('blur', function (event) {
+    const eventValue = addressInput.value
+    const eventRegex = /(?:[0-9]+[ ]+[A-Z][a-z.-]+[ ]?)+/i
+    const isValidEvent = eventRegex.test(eventValue)
 
-//     if (!isValidEvent) setFieldMessage('address','Votre adresse semble incorrect', true)
-// })
+    if (!isValidEvent) setFieldMessage('address','Votre adresse semble incorrect', true)
+})
 
-// // Vérification ville
-// cityInput.addEventListener('blur', function (event) {
-//     const eventValue = cityInput.value
-//     const eventRegex = /(?:[A-Z][a-z.-]+[ ]?)+/i
-//     const isValidEvent = eventRegex.test(eventValue)
+// Vérification ville
+cityInput.addEventListener('blur', function (event) {
+    const eventValue = cityInput.value
+    const eventRegex = /(?:[A-Z][a-z.-]+[ ]?)+/i
+    const isValidEvent = eventRegex.test(eventValue)
 
-//     if (!isValidEvent) {
-//         setFieldMessage('city','Votre ville semble incorrect', true)
-//     }
-// })
+    if (!isValidEvent) {
+        setFieldMessage('city','Votre ville semble incorrect', true)
+    }
+})
 
-// emailInput.addEventListener('focus', () => resetField('email'))
-// firstnameInput.addEventListener('focus', () => resetField('firstname'))
-// nameInput.addEventListener('focus', () => resetField('name'))
-// addressInput.addEventListener('focus', () => resetField('address'))
-// cityInput.addEventListener('focus', () => resetField('city'))
+// remise à zéro du champs du formulaire concerné
+emailInput.addEventListener('focus', () => resetField('email'))
+firstnameInput.addEventListener('focus', () => resetField('firstname'))
+nameInput.addEventListener('focus', () => resetField('name'))
+addressInput.addEventListener('focus', () => resetField('address'))
+cityInput.addEventListener('focus', () => resetField('city'))
 
+// Validation de la commande
 document.querySelector('#formCheckout').addEventListener('submit', async function(event){
     event.preventDefault()
 
+    // Stocker les informations importantes pour le serveur et envoi API
     const products = Object.keys(cart)
         , contact = {
             firstName: firstnameInput.value,

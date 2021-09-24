@@ -1,4 +1,18 @@
-﻿.navbar{
+﻿main{
+  width: 800px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media screen and (max-width: 800px) {
+  main{
+    width: auto;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+.navbar{
     background-color: #F3E9F1;
 }
 
@@ -32,17 +46,3 @@
 .hide-loader{
     display:none;
 }
-
-/* linear-gradient(
-  135deg,
-  #E78B06 0%,
-  #B8718B 33%,
-  #8F5BFE 100%
-);
-
-linear-gradient(
-  98.92deg,
-  #8F5BFE 0%,
-  #B8718B 29.95%,
-  #E78B06 98.5%
-); */

@@ -12,7 +12,7 @@ console.log(checkout)
 
 // vérification des informations de confirmation
 if (checkout === null) {
-    textCheckout.textContent = 'Pas de commande car votre panier est vide !'
+    textCheckout.textContent = 'Pas de commande validée, veuillez terminer vos achats.'
 } else {
     textCheckout.textContent = 'Votre commande à bien été validé ' + checkout.contact.firstName + ' ' + checkout.contact.lastName + ' !'
     orderCheckout.textContent = 'Voici votre numéro de commande : ' + checkout.orderId
