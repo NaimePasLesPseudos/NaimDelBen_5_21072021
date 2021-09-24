@@ -15,7 +15,7 @@ function addCart(product_id) {
         
         // Pop-up de confirmation d'ajout au panier
         if (confirm("C'est ajouté au panier ! \n\nSouhaitez-vous voir votre panier ?")) {
-            window.location.assign('/pages/shopping-cart.html')
+            window.location.assign('./shopping-cart.html')
         } else {
             event.preventDefault
         }

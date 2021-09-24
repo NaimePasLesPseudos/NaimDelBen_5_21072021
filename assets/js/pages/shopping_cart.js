@@ -185,7 +185,7 @@ document.querySelector('#formCheckout').addEventListener('submit', async functio
         const { orderId } = await api.createOrder(contact, products)
         localStorage.clear()
         localStorage.setItem('checkout', JSON.stringify({ orderId, cart, contact }))
-        window.location.assign('/pages/checkout.html')
+        window.location.assign('./checkout.html')
     } catch (error) {
         alert(error)
     }
