@@ -43,4 +43,4 @@ function createTemplateProduct() {
 }
 
 createTemplateProduct()
-addCart(query_id)
+addCart(query_id.get("product"))
