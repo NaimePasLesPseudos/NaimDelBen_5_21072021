@@ -3,18 +3,18 @@ import { addCart } from '../modules/cart.mjs'
 
 const template = document.querySelector("#product")
     , product_block_element = document.querySelector('#product_block')
-    , query_id = window.location.search.slice(1)
+    , query_id = new URLSearchParams(window.location.search.slice(1)) 
 
 let product = {}
 
 try {
-    product = await api.getOneProduct(query_id)
+    product = await api.getOneProduct(query_id.get("product"))
 } catch (error) {
     alert(error)
 }
 
 function createTemplateProduct() {
-    if (product._id === query_id) {
+    if (product._id === query_id.get("product")) {
         const product_element = document.importNode(template.content, true)
             , image_element = product_element.querySelector('img')
             , title_element = product_element.querySelector('.itemTitle')
