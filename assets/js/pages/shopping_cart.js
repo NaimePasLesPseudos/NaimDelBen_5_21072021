@@ -14,6 +14,8 @@ const subtotal_element = document.querySelector('#subtotalPrice .value')
     , shippingPrice = 5
     , cart = {}
 
+let totalPrice = 0
+
 // Construction du panier avec les produits du local storage
 const buildCart = (productList) => {
     for (let i = 0; i < localStorage.length; i++) {
@@ -37,40 +39,42 @@ const buildCartPrice = () => {
 
     subtotal_element.textContent = subTotalPrice
     shippingPrice_element.textContent = shippingPrice
-    totalPrice_element.textContent = subTotalPrice + shippingPrice
+    totalPrice = subTotalPrice + shippingPrice
+    totalPrice_element.textContent = totalPrice
 }
+
 
 // Construction pour l'affichage d'une ligne/produit
 const buildProductRow = product => {
     const product_element = document.importNode(template_product_row.content, true).querySelector('article')
-        , image_element = product_element.querySelector('img')
-        , title_element = product_element.querySelector('.cartTitle')
-        , priceU_element = product_element.querySelector('.cartPriceU .value')
-        , number_element = product_element.querySelector('.cartNumber')
-        , priceTotal_element = product_element.querySelector('.priceTotal .value')
-        , trashItem_element = product_element.querySelector('.trash')
-        , subtractQuantity_element = product_element.querySelector('.subtractQuantity')
-        , addQuantity_element = product_element.querySelector('.addQuantity')
-        , price = product.price / 100
-
+    , image_element = product_element.querySelector('img')
+    , title_element = product_element.querySelector('.cartTitle')
+    , priceU_element = product_element.querySelector('.cartPriceU .value')
+    , number_element = product_element.querySelector('.cartNumber')
+    , priceTotal_element = product_element.querySelector('.priceTotal .value')
+    , trashItem_element = product_element.querySelector('.trash')
+    , subtractQuantity_element = product_element.querySelector('.subtractQuantity')
+    , addQuantity_element = product_element.querySelector('.addQuantity')
+    , price = product.price / 100
+    
     product.total = price * product.quantity
-
+    
     image_element.setAttribute('src', product.imageUrl)
     image_element.setAttribute('alt', product.name)
     title_element.textContent = product.name
     priceU_element.textContent = price
     number_element.textContent = product.quantity
     priceTotal_element.textContent = product.total
-
+    
     trashItem_element.addEventListener('click', function(){
         trashItem(product._id)
         product_element.remove()
         delete cart[product._id]
         buildCartPrice()
     })
-
+    
     product_item_element.appendChild(product_element)
-
+    
     subtractQuantity_element.addEventListener('click', function(){
         if (product.quantity === 1) return
         product.quantity = subtractItem(product._id, product.quantity)
@@ -79,7 +83,7 @@ const buildProductRow = product => {
         priceTotal_element.textContent = product.total
         buildCartPrice()
     })
-
+    
     addQuantity_element.addEventListener('click', function(){
         product.quantity = addItem(product._id, product.quantity)
         product.total = price * product.quantity
@@ -184,7 +188,7 @@ document.querySelector('#formCheckout').addEventListener('submit', async functio
     try {
         const { orderId } = await api.createOrder(contact, products)
         localStorage.clear()
-        localStorage.setItem('checkout', JSON.stringify({ orderId, cart, contact }))
+        localStorage.setItem('checkout', JSON.stringify({ orderId, cart, contact, totalPrice }))
         window.location.assign('./checkout.html')
     } catch (error) {
         alert(error)
